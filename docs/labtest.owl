@@ -3,19 +3,19 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix adlt: <https://ajudev.github.io/ontology/docs/labtest.owl#> .
+@prefix adlt: <https://ajudev.github.io/ontology/labtest.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://ajudev.github.io/ontology/docs/labtest.owl> .
+@base <https://ajudev.github.io/ontology/labtest.owl> .
 
-<https://ajudev.github.io/ontology/docs/labtest.owl> rdf:type owl:Ontology ;
-                                                      owl:versionIRI <https://ajudev.github.io/ontology/docs/labtest.owl/0.1.0> ;
-                                                      dcterms:creator "Ajudev Devadas"@en ;
-                                                      dcterms:description "Lab Week 3 Ontology session"@en ;
-                                                      dcterms:license <https://opensource.org/licenses/MIT> ;
-                                                      dcterms:title "Lab Ontology"^^xsd:string ;
-                                                      rdfs:comment "Week 3 Lab session ontology"^^xsd:string ;
-                                                      owl:versionInfo 0.1 .
+<https://ajudev.github.io/ontology/labtest.owl> rdf:type owl:Ontology ;
+                                                 owl:versionIRI <https://ajudev.github.io/ontology/labtest.owl/0.1.0> ;
+                                                 dcterms:creator "Ajudev Devadas"@en ;
+                                                 dcterms:description "Lab Week 3 Ontology session"@en ;
+                                                 dcterms:license <https://opensource.org/licenses/MIT> ;
+                                                 dcterms:title "Lab Ontology"^^xsd:string ;
+                                                 rdfs:comment "Week 3 Lab session ontology"^^xsd:string ;
+                                                 owl:versionInfo 0.1 .
 
 #################################################################
 #    Annotation properties
@@ -49,21 +49,21 @@ dcterms:title rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#hasStudent
+###  https://ajudev.github.io/ontology/labtest.owl#hasStudent
 adlt:hasStudent rdf:type owl:ObjectProperty ;
                 owl:inverseOf adlt:studies ;
                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
                 <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:11:17Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#hasTeacher
+###  https://ajudev.github.io/ontology/labtest.owl#hasTeacher
 adlt:hasTeacher rdf:type owl:ObjectProperty ;
                 owl:inverseOf adlt:teaches ;
                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
                 <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:11:10Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#studies
+###  https://ajudev.github.io/ontology/labtest.owl#studies
 adlt:studies rdf:type owl:ObjectProperty ;
              rdfs:domain adlt:Student ;
              rdfs:range adlt:Course ;
@@ -71,7 +71,7 @@ adlt:studies rdf:type owl:ObjectProperty ;
              <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:10:59Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#teaches
+###  https://ajudev.github.io/ontology/labtest.owl#teaches
 adlt:teaches rdf:type owl:ObjectProperty ;
              rdfs:domain adlt:Academic ;
              rdfs:range adlt:Course ;
@@ -83,7 +83,7 @@ adlt:teaches rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#hasName
+###  https://ajudev.github.io/ontology/labtest.owl#hasName
 adlt:hasName rdf:type owl:DatatypeProperty ;
              rdfs:domain adlt:Person ;
              rdfs:range xsd:string ;
@@ -91,7 +91,7 @@ adlt:hasName rdf:type owl:DatatypeProperty ;
              <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:33:42Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#hasTitle
+###  https://ajudev.github.io/ontology/labtest.owl#hasTitle
 adlt:hasTitle rdf:type owl:DatatypeProperty ;
               rdfs:domain adlt:Course ;
               rdfs:range xsd:string ;
@@ -103,55 +103,55 @@ adlt:hasTitle rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Academic
+###  https://ajudev.github.io/ontology/labtest.owl#Academic
 adlt:Academic rdf:type owl:Class ;
               rdfs:subClassOf adlt:Staff ;
               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
               <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:05:41Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Administrative
+###  https://ajudev.github.io/ontology/labtest.owl#Administrative
 adlt:Administrative rdf:type owl:Class ;
                     rdfs:subClassOf adlt:Staff ;
                     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
                     <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:05:41Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Course
+###  https://ajudev.github.io/ontology/labtest.owl#Course
 adlt:Course rdf:type owl:Class ;
             owl:disjointWith adlt:Person ;
             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
             <http://purl.org/dc/elements/1.1/date> "2021-01-29T13:07:39Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Person
+###  https://ajudev.github.io/ontology/labtest.owl#Person
 adlt:Person rdf:type owl:Class ;
             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
             <http://purl.org/dc/elements/1.1/date> "2021-01-29T13:51:26Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Postgraduate
+###  https://ajudev.github.io/ontology/labtest.owl#Postgraduate
 adlt:Postgraduate rdf:type owl:Class ;
                   rdfs:subClassOf adlt:Student ;
                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
                   <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:05:41Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Staff
+###  https://ajudev.github.io/ontology/labtest.owl#Staff
 adlt:Staff rdf:type owl:Class ;
            rdfs:subClassOf adlt:Person ;
            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
            <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:05:41Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Student
+###  https://ajudev.github.io/ontology/labtest.owl#Student
 adlt:Student rdf:type owl:Class ;
              rdfs:subClassOf adlt:Person ;
              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
              <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:05:41Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Undergraduate
+###  https://ajudev.github.io/ontology/labtest.owl#Undergraduate
 adlt:Undergraduate rdf:type owl:Class ;
                    rdfs:subClassOf adlt:Student ;
                    <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
@@ -162,7 +162,7 @@ adlt:Undergraduate rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Alice
+###  https://ajudev.github.io/ontology/labtest.owl#Alice
 adlt:Alice rdf:type owl:NamedIndividual ,
                     adlt:Person ;
            adlt:studies adlt:F21BD ;
@@ -171,7 +171,7 @@ adlt:Alice rdf:type owl:NamedIndividual ,
            <http://purl.org/dc/elements/1.1/date> "2021-01-29T13:50:41Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#F20BD
+###  https://ajudev.github.io/ontology/labtest.owl#F20BD
 adlt:F20BD rdf:type owl:NamedIndividual ,
                     adlt:Course ;
            adlt:hasTitle "Big Data Management"^^xsd:string ;
@@ -179,7 +179,7 @@ adlt:F20BD rdf:type owl:NamedIndividual ,
            <http://purl.org/dc/elements/1.1/date> "2021-01-29T14:44:03Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#F21BD
+###  https://ajudev.github.io/ontology/labtest.owl#F21BD
 adlt:F21BD rdf:type owl:NamedIndividual ,
                     adlt:Course ;
            adlt:hasTitle "Big Data Management"^^xsd:string ;
@@ -187,7 +187,7 @@ adlt:F21BD rdf:type owl:NamedIndividual ,
            <http://purl.org/dc/elements/1.1/date> "2021-01-29T13:54:25Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/docs/labtest.owl#Hadj
+###  https://ajudev.github.io/ontology/labtest.owl#Hadj
 adlt:Hadj rdf:type owl:NamedIndividual ,
                    adlt:Person ;
           adlt:teaches adlt:F20BD ,
