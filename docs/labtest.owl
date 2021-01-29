@@ -6,17 +6,16 @@
 @prefix adlt: <https://alasdairgray.github.io/ns/start/labtest#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://alasdairgray.github.io/ns/start/labtest#> .
+@base <https://ajudev.github.io/ontology/labtest.owl> .
 
-<https://alasdairgray.github.io/ns/start/labtest#> rdf:type owl:Ontology ;
-                                                    owl:versionIRI <https://alasdairgray.github.io/ns/start/0.1.0> ;
-                                                    dcterms:creator <http://orcid.org/0000-0002-5711-4872> ,
-                                                                    "Ajudev Devadas"@en ;
-                                                    dcterms:description "Lab Week 3 Ontology session"@en ;
-                                                    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-                                                    dcterms:title "Lab Ontology"^^xsd:string ;
-                                                    rdfs:comment "Week 3 Lab session ontology"^^xsd:string ;
-                                                    owl:versionInfo 0.1 .
+<https://ajudev.github.io/ontology/labtest.owl> rdf:type owl:Ontology ;
+                                                 owl:versionIRI <https://ajudev.github.io/ontology/labtest0.1.0> ;
+                                                 dcterms:creator "Ajudev Devadas"@en ;
+                                                 dcterms:description "Lab Week 3 Ontology session"@en ;
+                                                 dcterms:license <https://opensource.org/licenses/MIT> ;
+                                                 dcterms:title "Lab Ontology"^^xsd:string ;
+                                                 rdfs:comment "Week 3 Lab session ontology"^^xsd:string ;
+                                                 owl:versionInfo 0.1 .
 
 #################################################################
 #    Annotation properties
