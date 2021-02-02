@@ -71,8 +71,26 @@ mco:sungBy rdf:type owl:ObjectProperty ;
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  https://ajudev.github.io/ontology/music.owl#ArtistName
+mco:ArtistName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:range xsd:string ;
+               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-02T03:31:55Z"^^xsd:dateTime .
+
+
+#################################################################
 #    Classes
 #################################################################
+
+###  https://ajudev.github.io/ontology/music.owl#Album
+mco:Album rdf:type owl:Class ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-01T18:19:34Z"^^xsd:dateTime .
+
 
 ###  https://ajudev.github.io/ontology/music.owl#Artist
 mco:Artist rdf:type owl:Class ;
@@ -115,27 +133,34 @@ mco:Rock rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  https://ajudev.github.io/ontology/music.owl#BonJovi
-mco:BonJovi rdf:type owl:NamedIndividual ,
-                     mco:Artist ;
-            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-            <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:29:02Z"^^xsd:dateTime ;
-            rdfs:label "Bon Jovi" .
+###  https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965#
+<https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965#> rdf:type owl:NamedIndividual ,
+                                                                                mco:Artist ;
+                                                                       mco:ArtistName "Bon Jovi"^^xsd:string ;
+                                                                       rdfs:label "Bon Jovi"^^xsd:string .
 
 
-###  https://ajudev.github.io/ontology/music.owl#LivinOnAPrayer
-mco:LivinOnAPrayer rdf:type owl:NamedIndividual ,
-                            mco:Rock ;
-                   mco:sungBy mco:BonJovi ;
-                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                   <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:58:34Z"^^xsd:dateTime .
+###  https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab#
+<https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab#> rdf:type owl:NamedIndividual ,
+                                                                                mco:Artist ;
+                                                                       mco:ArtistName "Metallica"^^xsd:string ;
+                                                                       dcterms:creator "Ajudev"^^xsd:string ;
+                                                                       rdfs:label "Metallica"^^xsd:string .
 
 
-###  https://ajudev.github.io/ontology/music.owl#Metallica
-mco:Metallica rdf:type owl:NamedIndividual ,
-                       mco:Artist ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:36:06Z"^^xsd:dateTime .
+###  https://musicbrainz.org/work/623dbe1a-9850-336c-80ac-44b3d8638e64#
+<https://musicbrainz.org/work/623dbe1a-9850-336c-80ac-44b3d8638e64#> rdf:type owl:NamedIndividual ,
+                                                                              mco:Rock ;
+                                                                     mco:sungBy <https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965#> ;
+                                                                     dcterms:title "Livin' On A Prayer"^^xsd:string ;
+                                                                     rdfs:label "Livin On A Prayer"^^xsd:string .
+
+
+###  https://musicbrainz.org/work/e5f97e53-ed4d-3721-afb5-5c47dda08782#
+<https://musicbrainz.org/work/e5f97e53-ed4d-3721-afb5-5c47dda08782#> rdf:type owl:NamedIndividual ,
+                                                                              mco:Metal ;
+                                                                     dcterms:title "Enter Sandman"^^xsd:string ;
+                                                                     rdfs:label "Enter Sandman"^^xsd:string .
 
 
 #################################################################
