@@ -56,9 +56,35 @@ dcterms:title rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  https://ajudev.github.io/ontology/music.owl#genreArtist
+mco:genreArtist rdf:type owl:ObjectProperty ;
+                owl:inverseOf mco:genreType ;
+                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:29:08Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#genreType
+mco:genreType rdf:type owl:ObjectProperty ;
+              rdfs:domain mco:Artist ;
+              rdfs:range mco:Genre ;
+              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:25:51Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#partOf
+mco:partOf rdf:type owl:ObjectProperty ;
+           rdfs:domain mco:Album ;
+           rdfs:range mco:Genre ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:03:10Z"^^xsd:dateTime .
+
+
 ###  https://ajudev.github.io/ontology/music.owl#sings
 mco:sings rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf mco:sungBy ;
+          rdfs:domain mco:Artist ;
+          rdfs:range mco:Album ;
           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
           <http://purl.org/dc/elements/1.1/date> "2021-02-01T04:04:56Z"^^xsd:dateTime .
 
@@ -98,51 +124,70 @@ mco:Artist rdf:type owl:Class ;
            <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:40Z"^^xsd:dateTime .
 
 
+###  https://ajudev.github.io/ontology/music.owl#Band
+mco:Band rdf:type owl:Class ;
+         rdfs:subClassOf mco:Artist ;
+         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:17:30Z"^^xsd:dateTime .
+
+
 ###  https://ajudev.github.io/ontology/music.owl#Genre
 mco:Genre rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Restriction ;
-                                owl:onProperty mco:sungBy ;
-                                owl:someValuesFrom mco:Artist
-                              ] ;
           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
           <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:09Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/music.owl#Hip_Hop
-mco:Hip_Hop rdf:type owl:Class ;
-            rdfs:subClassOf mco:Genre ;
-            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-            <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:01:55Z"^^xsd:dateTime .
+###  https://ajudev.github.io/ontology/music.owl#MultipleTrack
+mco:MultipleTrack rdf:type owl:Class ;
+                  rdfs:subClassOf mco:Album ;
+                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:29:01Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/music.owl#Metal
-mco:Metal rdf:type owl:Class ;
-          rdfs:subClassOf mco:Genre ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:25:29Z"^^xsd:dateTime .
+###  https://ajudev.github.io/ontology/music.owl#SingleArtist
+mco:SingleArtist rdf:type owl:Class ;
+                 rdfs:subClassOf mco:Artist ;
+                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:17:30Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/music.owl#Rock
-mco:Rock rdf:type owl:Class ;
-         rdfs:subClassOf mco:Genre ;
-         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-         <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:01:55Z"^^xsd:dateTime .
+###  https://ajudev.github.io/ontology/music.owl#SingleTrack
+mco:SingleTrack rdf:type owl:Class ;
+                rdfs:subClassOf mco:Album ;
+                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:28:47Z"^^xsd:dateTime .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
+###  https://ajudev.github.io/ontology/music.owl#Rock
+mco:Rock rdf:type owl:NamedIndividual ,
+                  mco:Genre ;
+         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:05:54Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Slippery_When_Wet
+mco:Slippery_When_Wet rdf:type owl:NamedIndividual ,
+                               mco:MultipleTrack ;
+                      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                      <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:47:34Z"^^xsd:dateTime .
+
+
 ###  https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965#
 <https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965#> rdf:type owl:NamedIndividual ,
-                                                                                mco:Artist ;
+                                                                                mco:Band ;
+                                                                       mco:genreType mco:Rock ;
                                                                        mco:ArtistName "Bon Jovi"^^xsd:string ;
                                                                        rdfs:label "Bon Jovi"^^xsd:string .
 
 
 ###  https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab#
 <https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab#> rdf:type owl:NamedIndividual ,
-                                                                                mco:Artist ;
+                                                                                mco:Band ;
+                                                                       mco:genreType mco:Rock ;
                                                                        mco:ArtistName "Metallica"^^xsd:string ;
                                                                        dcterms:creator "Ajudev"^^xsd:string ;
                                                                        rdfs:label "Metallica"^^xsd:string .
@@ -150,7 +195,7 @@ mco:Rock rdf:type owl:Class ;
 
 ###  https://musicbrainz.org/work/623dbe1a-9850-336c-80ac-44b3d8638e64#
 <https://musicbrainz.org/work/623dbe1a-9850-336c-80ac-44b3d8638e64#> rdf:type owl:NamedIndividual ,
-                                                                              mco:Rock ;
+                                                                              mco:SingleTrack ;
                                                                      mco:sungBy <https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965#> ;
                                                                      dcterms:title "Livin' On A Prayer"^^xsd:string ;
                                                                      rdfs:label "Livin On A Prayer"^^xsd:string .
@@ -158,21 +203,11 @@ mco:Rock rdf:type owl:Class ;
 
 ###  https://musicbrainz.org/work/e5f97e53-ed4d-3721-afb5-5c47dda08782#
 <https://musicbrainz.org/work/e5f97e53-ed4d-3721-afb5-5c47dda08782#> rdf:type owl:NamedIndividual ,
-                                                                              mco:Metal ;
+                                                                              mco:SingleTrack ;
+                                                                     mco:partOf mco:Rock ;
+                                                                     mco:sungBy <https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab#> ;
                                                                      dcterms:title "Enter Sandman"^^xsd:string ;
                                                                      rdfs:label "Enter Sandman"^^xsd:string .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( mco:Hip_Hop
-                mco:Metal
-                mco:Rock
-              )
-] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
