@@ -73,7 +73,7 @@ mco:genreType rdf:type owl:ObjectProperty ;
 
 ###  https://ajudev.github.io/ontology/music.owl#partOf
 mco:partOf rdf:type owl:ObjectProperty ;
-           rdfs:domain mco:Album ;
+           rdfs:domain mco:Track ;
            rdfs:range mco:Genre ;
            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
            <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:03:10Z"^^xsd:dateTime .
@@ -84,7 +84,7 @@ mco:sings rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
           owl:inverseOf mco:sungBy ;
           rdfs:domain mco:Artist ;
-          rdfs:range mco:Album ;
+          rdfs:range mco:Track ;
           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
           <http://purl.org/dc/elements/1.1/date> "2021-02-01T04:04:56Z"^^xsd:dateTime .
 
@@ -114,8 +114,9 @@ mco:ArtistName rdf:type owl:DatatypeProperty ;
 
 ###  https://ajudev.github.io/ontology/music.owl#Album
 mco:Album rdf:type owl:Class ;
+          rdfs:subClassOf mco:Track ;
           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-01T18:19:34Z"^^xsd:dateTime .
+          <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:29:01Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Artist
@@ -137,13 +138,6 @@ mco:Genre rdf:type owl:Class ;
           <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:09Z"^^xsd:dateTime .
 
 
-###  https://ajudev.github.io/ontology/music.owl#MultipleTrack
-mco:MultipleTrack rdf:type owl:Class ;
-                  rdfs:subClassOf mco:Album ;
-                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                  <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:29:01Z"^^xsd:dateTime .
-
-
 ###  https://ajudev.github.io/ontology/music.owl#SingleArtist
 mco:SingleArtist rdf:type owl:Class ;
                  rdfs:subClassOf mco:Artist ;
@@ -153,9 +147,15 @@ mco:SingleArtist rdf:type owl:Class ;
 
 ###  https://ajudev.github.io/ontology/music.owl#SingleTrack
 mco:SingleTrack rdf:type owl:Class ;
-                rdfs:subClassOf mco:Album ;
+                rdfs:subClassOf mco:Track ;
                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
                 <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:28:47Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Track
+mco:Track rdf:type owl:Class ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-01T18:19:34Z"^^xsd:dateTime .
 
 
 #################################################################
@@ -171,7 +171,7 @@ mco:Rock rdf:type owl:NamedIndividual ,
 
 ###  https://ajudev.github.io/ontology/music.owl#Slippery_When_Wet
 mco:Slippery_When_Wet rdf:type owl:NamedIndividual ,
-                               mco:MultipleTrack ;
+                               mco:Album ;
                       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
                       <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:47:34Z"^^xsd:dateTime .
 
