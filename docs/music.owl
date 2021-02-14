@@ -132,9 +132,7 @@ xsd:time rdf:type rdfs:Datatype .
 :playedBy rdf:type owl:ObjectProperty ;
           owl:inverseOf :radioShows ;
           rdfs:domain :RadioShow ;
-          rdfs:range :RadioStation ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:10:54Z"^^xsd:dateTime .
+          rdfs:range :RadioStation .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#playedOn
@@ -292,6 +290,7 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  https://ajudev.github.io/ontology/music.owl#playedAt
 :playedAt rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
           rdfs:domain :Track ;
           rdfs:range xsd:dateTime ;
           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
@@ -480,6 +479,7 @@ xsd:time rdf:type rdfs:Datatype .
            :TrackDurationInMinutes "03:50"^^xsd:duration ;
            :TrackName "Hypnotize"^^xsd:string ;
            :TrackReleaseDate "1997-03-01T00:00:00"^^xsd:dateTime ;
+           :playedAt "2021-02-13T13:01:00"^^xsd:dateTime ;
            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
            <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:50Z"^^xsd:dateTime ;
            rdfs:label "Hypnotize"^^xsd:string .
