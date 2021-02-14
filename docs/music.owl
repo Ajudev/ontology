@@ -1,19 +1,17 @@
 @prefix : <https://ajudev.github.io/ontology/music.owl#> .
-@prefix mco: <https://ajudev.github.io/ontology/music.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://ajudev.github.io/ontology/music.owl#> .
 
 <https://ajudev.github.io/ontology/music.owl#> rdf:type owl:Ontology ;
                                                 owl:versionIRI <https://ajudev.github.io/ontology/music.owl/0.1.0> ;
-                                                dcterms:creator "Ajudev Devadas"^^xsd:string ;
-                                                dcterms:description "Coursework Task 1 Ontology"^^xsd:string ;
-                                                dcterms:license <https://opensource.org/licenses/MIT> ;
-                                                dcterms:title "Coursework Task 1"^^xsd:string ;
+                                                <http://purl.org/dc/terms/creator> "Ajudev Devadas"^^xsd:string ;
+                                                <http://purl.org/dc/terms/description> "Coursework Task 1 Ontology"^^xsd:string ;
+                                                <http://purl.org/dc/terms/license> <https://opensource.org/licenses/MIT> ;
+                                                <http://purl.org/dc/terms/title> "Coursework Task 1"^^xsd:string ;
                                                 owl:versionInfo 0.1 .
 
 #################################################################
@@ -29,27 +27,27 @@
 
 
 ###  http://purl.org/dc/terms/created
-dcterms:created rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/date
-dcterms:date rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -69,151 +67,151 @@ xsd:time rdf:type rdfs:Datatype .
 #################################################################
 
 ###  https://ajudev.github.io/ontology/music.owl#AlbumByArtist
-mco:AlbumByArtist rdf:type owl:ObjectProperty ;
-                  owl:inverseOf mco:ArtistOfAlbum ;
-                  rdfs:domain mco:Album ;
-                  rdfs:range mco:Artist ;
-                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                  <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:22:04Z"^^xsd:dateTime .
+:AlbumByArtist rdf:type owl:ObjectProperty ;
+               owl:inverseOf :ArtistOfAlbum ;
+               rdfs:domain :Album ;
+               rdfs:range :Artist ;
+               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:22:04Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#ArtistGenreType
-mco:ArtistGenreType rdf:type owl:ObjectProperty ;
-                    owl:inverseOf mco:genreArtist ;
-                    rdfs:domain mco:Artist ;
-                    rdfs:range mco:Genre ;
-                    <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                    <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:25:51Z"^^xsd:dateTime .
+:ArtistGenreType rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :genreArtist ;
+                 rdfs:domain :Artist ;
+                 rdfs:range :Genre ;
+                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:25:51Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#ArtistOfAlbum
-mco:ArtistOfAlbum rdf:type owl:ObjectProperty ;
-                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                  <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:21:30Z"^^xsd:dateTime .
+:ArtistOfAlbum rdf:type owl:ObjectProperty ;
+               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:21:30Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#DJPlayedTrack
-mco:DJPlayedTrack rdf:type owl:ObjectProperty ;
-                  owl:inverseOf mco:trackPlayedBy ;
-                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                  <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:37:34Z"^^xsd:dateTime .
+:DJPlayedTrack rdf:type owl:ObjectProperty ;
+               owl:inverseOf :trackPlayedBy ;
+               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:37:34Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#employees
-mco:employees rdf:type owl:ObjectProperty ;
-              owl:inverseOf mco:workingFor ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:34:08Z"^^xsd:dateTime .
+:employees rdf:type owl:ObjectProperty ;
+           owl:inverseOf :workingFor ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:34:08Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#genreArtist
-mco:genreArtist rdf:type owl:ObjectProperty ;
-                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:29:08Z"^^xsd:dateTime .
+:genreArtist rdf:type owl:ObjectProperty ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:29:08Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#partOfAlbum
-mco:partOfAlbum rdf:type owl:ObjectProperty ;
-                owl:inverseOf mco:songsInAlbum ;
-                rdfs:domain mco:SingleTrack ;
-                rdfs:range mco:Album ;
-                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:58:44Z"^^xsd:dateTime .
+:partOfAlbum rdf:type owl:ObjectProperty ;
+             owl:inverseOf :songsInAlbum ;
+             rdfs:domain :SingleTrack ;
+             rdfs:range :Album ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:58:44Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#partOfGenre
-mco:partOfGenre rdf:type owl:ObjectProperty ;
-                owl:inverseOf mco:trackInGenre ;
-                rdfs:domain mco:Track ;
-                rdfs:range mco:Genre ;
-                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:03:10Z"^^xsd:dateTime .
+:partOfGenre rdf:type owl:ObjectProperty ;
+             owl:inverseOf :trackInGenre ;
+             rdfs:domain :Track ;
+             rdfs:range :Genre ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:03:10Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#playedBy
-mco:playedBy rdf:type owl:ObjectProperty ;
-             owl:inverseOf mco:radioShows ;
-             rdfs:domain mco:RadioShow ;
-             rdfs:range mco:RadioStation ;
-             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-             <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:10:54Z"^^xsd:dateTime .
+:playedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :radioShows ;
+          rdfs:domain :RadioShow ;
+          rdfs:range :RadioStation ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:10:54Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#playedOn
-mco:playedOn rdf:type owl:ObjectProperty ;
-             owl:inverseOf mco:tracksPlayed ;
-             rdfs:domain mco:Track ;
-             rdfs:range mco:RadioShow ;
-             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-             <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:26:13Z"^^xsd:dateTime .
+:playedOn rdf:type owl:ObjectProperty ;
+          owl:inverseOf :tracksPlayed ;
+          rdfs:domain :Track ;
+          rdfs:range :RadioShow ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:26:13Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#radioShows
-mco:radioShows rdf:type owl:ObjectProperty ;
-               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-               <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:14:55Z"^^xsd:dateTime .
+:radioShows rdf:type owl:ObjectProperty ;
+            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:14:55Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#sings
-mco:sings rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf owl:topObjectProperty ;
-          owl:inverseOf mco:sungBy ;
-          rdfs:domain mco:Artist ;
-          rdfs:range mco:Track ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-01T04:04:56Z"^^xsd:dateTime .
+:sings rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :sungBy ;
+       rdfs:domain :Artist ;
+       rdfs:range :Track ;
+       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-01T04:04:56Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#songsInAlbum
-mco:songsInAlbum rdf:type owl:ObjectProperty ;
-                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                 <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:01:00Z"^^xsd:dateTime .
+:songsInAlbum rdf:type owl:ObjectProperty ;
+              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:01:00Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#sungBy
-mco:sungBy rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-           <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:52:31Z"^^xsd:dateTime .
+:sungBy rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:52:31Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#trackInGenre
-mco:trackInGenre rdf:type owl:ObjectProperty ;
-                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                 <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:12:12Z"^^xsd:dateTime .
+:trackInGenre rdf:type owl:ObjectProperty ;
+              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:12:12Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#trackPlayedBy
-mco:trackPlayedBy rdf:type owl:ObjectProperty ;
-                  rdfs:domain mco:Track ;
-                  rdfs:range mco:DJ ;
-                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                  <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:35:51Z"^^xsd:dateTime .
+:trackPlayedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Track ;
+               rdfs:range :DJ ;
+               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:35:51Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#tracksPlayed
-mco:tracksPlayed rdf:type owl:ObjectProperty ;
-                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                 <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:18:05Z"^^xsd:dateTime .
+:tracksPlayed rdf:type owl:ObjectProperty ;
+              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:18:05Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#wasPlayedBy
-mco:wasPlayedBy rdf:type owl:ObjectProperty ;
-                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:25:20Z"^^xsd:dateTime .
+:wasPlayedBy rdf:type owl:ObjectProperty ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:25:20Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#workingFor
-mco:workingFor rdf:type owl:ObjectProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( mco:DJ
-                                           mco:Producer
-                                           mco:Technician
-                                         )
-                           ] ;
-               rdfs:range mco:RadioStation ;
-               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-               <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:27:21Z"^^xsd:dateTime .
+:workingFor rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :DJ
+                                        :Producer
+                                        :Technician
+                                      )
+                        ] ;
+            rdfs:range :RadioStation ;
+            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:27:21Z"^^xsd:dateTime .
 
 
 #################################################################
@@ -221,75 +219,83 @@ mco:workingFor rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://ajudev.github.io/ontology/music.owl#AlbumName
-mco:AlbumName rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:string ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:42:48Z"^^xsd:dateTime .
+:AlbumName rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:42:48Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#AlbumReleaseDate
-mco:AlbumReleaseDate rdf:type owl:DatatypeProperty ;
-                     rdfs:range xsd:dateTime ;
-                     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                     <http://purl.org/dc/elements/1.1/date> "2021-02-04T04:09:25Z"^^xsd:dateTime .
+:AlbumReleaseDate rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:dateTime ;
+                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-02-04T04:09:25Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#ArtistName
-mco:ArtistName rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf owl:topDataProperty ;
-               rdfs:range xsd:string ;
-               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-               <http://purl.org/dc/elements/1.1/date> "2021-02-02T03:31:55Z"^^xsd:dateTime .
+:ArtistName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:range xsd:string ;
+            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-02T03:31:55Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#GenreName
-mco:GenreName rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf owl:topDataProperty ;
-              rdfs:range xsd:string ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:56:30Z"^^xsd:dateTime .
+:GenreName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:range xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:56:30Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#ShowDurationInHours
-mco:ShowDurationInHours rdf:type owl:DatatypeProperty ;
-                        rdfs:range xsd:duration ;
-                        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                        <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:32:44Z"^^xsd:dateTime .
+:ShowDurationInHours rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:duration ;
+                     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                     <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:32:44Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#ShowEndTime
-mco:ShowEndTime rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:time ;
-                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:24:29Z"^^xsd:dateTime .
+:ShowEndTime rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:time ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:24:29Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#ShowStartTime
-mco:ShowStartTime rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:time ;
-                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                  <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:21:21Z"^^xsd:dateTime .
+:ShowStartTime rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:time ;
+               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:21:21Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#TrackDurationInMinutes
-mco:TrackDurationInMinutes rdf:type owl:DatatypeProperty ;
-                           rdfs:range xsd:duration ;
-                           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                           <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:48:37Z"^^xsd:dateTime .
+:TrackDurationInMinutes rdf:type owl:DatatypeProperty ;
+                        rdfs:range xsd:duration ;
+                        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                        <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:48:37Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#TrackName
-mco:TrackName rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:string ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:44:40Z"^^xsd:dateTime .
+:TrackName rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:44:40Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#TrackReleaseDate
-mco:TrackReleaseDate rdf:type owl:DatatypeProperty ;
-                     rdfs:range xsd:dateTime ;
-                     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                     <http://purl.org/dc/elements/1.1/date> "2021-02-04T04:02:30Z"^^xsd:dateTime .
+:TrackReleaseDate rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:dateTime ;
+                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-02-04T04:02:30Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#playedAt
+:playedAt rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Track ;
+          rdfs:range xsd:dateTime ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:36:50Z"^^xsd:dateTime .
 
 
 #################################################################
@@ -297,77 +303,77 @@ mco:TrackReleaseDate rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  https://ajudev.github.io/ontology/music.owl#Album
-mco:Album rdf:type owl:Class ;
-          rdfs:subClassOf mco:Track ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:29:01Z"^^xsd:dateTime .
+:Album rdf:type owl:Class ;
+       rdfs:subClassOf :Track ;
+       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:29:01Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Artist
-mco:Artist rdf:type owl:Class ;
-           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-           <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:40Z"^^xsd:dateTime .
+:Artist rdf:type owl:Class ;
+        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:40Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Band
-mco:Band rdf:type owl:Class ;
-         rdfs:subClassOf mco:Artist ;
-         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-         <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:17:30Z"^^xsd:dateTime .
+:Band rdf:type owl:Class ;
+      rdfs:subClassOf :Artist ;
+      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:17:30Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#DJ
-mco:DJ rdf:type owl:Class ;
-       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-       <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:21:01Z"^^xsd:dateTime .
+:DJ rdf:type owl:Class ;
+    <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+    <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:21:01Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Genre
-mco:Genre rdf:type owl:Class ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:09Z"^^xsd:dateTime .
+:Genre rdf:type owl:Class ;
+       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-01T03:16:09Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Producer
-mco:Producer rdf:type owl:Class ;
-             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-             <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:21:01Z"^^xsd:dateTime .
+:Producer rdf:type owl:Class ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:21:01Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#RadioShow
-mco:RadioShow rdf:type owl:Class ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:08:58Z"^^xsd:dateTime .
+:RadioShow rdf:type owl:Class ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:08:58Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#RadioStation
-mco:RadioStation rdf:type owl:Class .
+:RadioStation rdf:type owl:Class .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#SingleArtist
-mco:SingleArtist rdf:type owl:Class ;
-                 rdfs:subClassOf mco:Artist ;
-                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                 <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:17:30Z"^^xsd:dateTime .
+:SingleArtist rdf:type owl:Class ;
+              rdfs:subClassOf :Artist ;
+              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:17:30Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#SingleTrack
-mco:SingleTrack rdf:type owl:Class ;
-                rdfs:subClassOf mco:Track ;
-                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:28:47Z"^^xsd:dateTime .
+:SingleTrack rdf:type owl:Class ;
+             rdfs:subClassOf :Track ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:28:47Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Technician
-mco:Technician rdf:type owl:Class ;
-               <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-               <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:21:01Z"^^xsd:dateTime .
+:Technician rdf:type owl:Class ;
+            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:21:01Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Track
-mco:Track rdf:type owl:Class ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-01T18:19:34Z"^^xsd:dateTime .
+:Track rdf:type owl:Class ;
+       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-01T18:19:34Z"^^xsd:dateTime .
 
 
 #################################################################
@@ -375,179 +381,287 @@ mco:Track rdf:type owl:Class ;
 #################################################################
 
 ###  https://ajudev.github.io/ontology/music.owl#Amy
-mco:Amy rdf:type owl:NamedIndividual ,
-                 mco:Technician ;
-        mco:workingFor mco:WattRadio ;
-        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-        <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:01:18Z"^^xsd:dateTime .
+:Amy rdf:type owl:NamedIndividual ,
+              :Technician ;
+     :workingFor :WattRadio ;
+     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:01:18Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#AndJusticeForAll
-mco:AndJusticeForAll rdf:type owl:NamedIndividual ,
-                              mco:Album ;
-                     mco:AlbumByArtist mco:Metallica ;
-                     mco:partOfGenre mco:Metal ;
-                     mco:AlbumName "And Justic For All"^^xsd:string ;
-                     mco:AlbumReleaseDate "1988-08-25T00:00:00"^^xsd:dateTime ;
-                     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                     <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:53:35Z"^^xsd:dateTime ;
-                     rdfs:label "And Justice For All"^^xsd:string .
+:AndJusticeForAll rdf:type owl:NamedIndividual ,
+                           :Album ;
+                  :AlbumByArtist :Metallica ;
+                  :partOfGenre :Metal ;
+                  :AlbumName "And Justic For All"^^xsd:string ;
+                  :AlbumReleaseDate "1988-08-25T00:00:00"^^xsd:dateTime ;
+                  <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:53:35Z"^^xsd:dateTime ;
+                  rdfs:label "And Justice For All"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Aquarium
+:Aquarium rdf:type owl:NamedIndividual ,
+                   :SingleTrack ;
+          :partOfAlbum :CarnivalOfAnimals ;
+          :sungBy :CamilleSaint-Saëns ;
+          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:52:59Z"^^xsd:dateTime ;
+          rdfs:label "Aquarium"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#BonJovi
-mco:BonJovi rdf:type owl:NamedIndividual ,
-                     mco:Band ;
-            mco:ArtistGenreType mco:Rock ;
-            mco:ArtistName "Bon Jovi"^^xsd:string ;
-            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-            rdfs:label "Bon Jovi"^^xsd:string .
+:BonJovi rdf:type owl:NamedIndividual ,
+                  :Band ;
+         :ArtistGenreType :Rock ;
+         :ArtistName "Bon Jovi"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+         rdfs:label "Bon Jovi"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#CamilleSaint-Saëns
+:CamilleSaint-Saëns rdf:type owl:NamedIndividual ,
+                             :SingleArtist ;
+                    :ArtistGenreType :Classical ;
+                    <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                    <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:00:14Z"^^xsd:dateTime ;
+                    rdfs:label "Camille Saint-Saëns"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#CarnivalOfAnimals
+:CarnivalOfAnimals rdf:type owl:NamedIndividual ,
+                            :Album ;
+                   :AlbumByArtist :CamilleSaint-Saëns ;
+                   :partOfGenre :Classical ;
+                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                   <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:58:26Z"^^xsd:dateTime ;
+                   rdfs:label "The Carnival of Animals"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Classical
+:Classical rdf:type owl:NamedIndividual ,
+                    :Genre ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:50:11Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Disco
+:Disco rdf:type owl:NamedIndividual ,
+                :Genre ;
+       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:50:58Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#DonnaSummer
+:DonnaSummer rdf:type owl:NamedIndividual ,
+                      :SingleArtist ;
+             :ArtistGenreType :Disco ;
+             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:08:13Z"^^xsd:dateTime ;
+             rdfs:label "Donna Summer"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#HipHop
-mco:HipHop rdf:type owl:NamedIndividual ,
-                    mco:Genre ;
-           mco:GenreName "Hip Hop"^^xsd:string ;
-           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-           <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:10Z"^^xsd:dateTime ;
-           rdfs:label "Hip Hop"^^xsd:string .
+:HipHop rdf:type owl:NamedIndividual ,
+                 :Genre ;
+        :GenreName "Hip Hop"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:10Z"^^xsd:dateTime ;
+        rdfs:label "Hip Hop"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Hypnotize
-mco:Hypnotize rdf:type owl:NamedIndividual ,
-                       mco:SingleTrack ;
-              mco:partOfAlbum mco:LifeAfterDeath ;
-              mco:playedOn mco:TheMorningShow ;
-              mco:sungBy mco:TheNotoriousBIG ;
-              mco:trackPlayedBy mco:Sam ;
-              mco:TrackDurationInMinutes "03:50"^^xsd:duration ;
-              mco:TrackName "Hypnotize"^^xsd:string ;
-              mco:TrackReleaseDate "1997-03-01T00:00:00"^^xsd:dateTime ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:50Z"^^xsd:dateTime ;
-              rdfs:label "Hypnotize"^^xsd:string .
+:Hypnotize rdf:type owl:NamedIndividual ,
+                    :SingleTrack ;
+           :partOfAlbum :LifeAfterDeath ;
+           :playedOn :TheMorningShow ;
+           :sungBy :TheNotoriousBIG ;
+           :trackPlayedBy :Sam ;
+           :TrackDurationInMinutes "03:50"^^xsd:duration ;
+           :TrackName "Hypnotize"^^xsd:string ;
+           :TrackReleaseDate "1997-03-01T00:00:00"^^xsd:dateTime ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:50Z"^^xsd:dateTime ;
+           rdfs:label "Hypnotize"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Jazz
+:Jazz rdf:type owl:NamedIndividual ,
+               :Genre ;
+      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:51:06Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Josh
-mco:Josh rdf:type owl:NamedIndividual ,
-                  mco:Producer ;
-         mco:workingFor mco:WattRadio ;
-         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-         <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:52:25Z"^^xsd:dateTime .
+:Josh rdf:type owl:NamedIndividual ,
+               :Producer ;
+      :workingFor :WattRadio ;
+      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:52:25Z"^^xsd:dateTime .
+
+
+###  https://ajudev.github.io/ontology/music.owl#KindOfBlue
+:KindOfBlue rdf:type owl:NamedIndividual ,
+                     :Album ;
+            :AlbumByArtist :MilesDavis ;
+            :partOfGenre :Jazz ;
+            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:15:16Z"^^xsd:dateTime ;
+            rdfs:label "Kind Of Blue"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#LastDance
+:LastDance rdf:type owl:NamedIndividual ,
+                    :SingleTrack ;
+           :partOfAlbum <https://ajudev.github.io/ontology/music.owl#Live&More> ;
+           :sungBy :DonnaSummer ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:09:28Z"^^xsd:dateTime ;
+           rdfs:label "Last Dance"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#LifeAfterDeath
-mco:LifeAfterDeath rdf:type owl:NamedIndividual ,
-                            mco:Album ;
-                   mco:AlbumByArtist mco:TheNotoriousBIG ;
-                   mco:partOfGenre mco:HipHop ;
-                   mco:AlbumName "Life After Death"^^xsd:string ;
-                   mco:AlbumReleaseDate "1997-03-25T00:00:00"^^xsd:dateTime ;
-                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                   <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:21Z"^^xsd:dateTime ;
-                   rdfs:label "Life After Death"^^xsd:string .
+:LifeAfterDeath rdf:type owl:NamedIndividual ,
+                         :Album ;
+                :AlbumByArtist :TheNotoriousBIG ;
+                :partOfGenre :HipHop ;
+                :AlbumName "Life After Death"^^xsd:string ;
+                :AlbumReleaseDate "1997-03-25T00:00:00"^^xsd:dateTime ;
+                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:21Z"^^xsd:dateTime ;
+                rdfs:label "Life After Death"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#LivinOnAPrayer
-mco:LivinOnAPrayer rdf:type owl:NamedIndividual ,
-                            mco:SingleTrack ;
-                   mco:partOfAlbum mco:SlipperyWhenWet ;
-                   mco:sungBy mco:BonJovi ;
-                   mco:TrackDurationInMinutes "04:11"^^xsd:duration ;
-                   mco:TrackName "Livin' On A Prayer"^^xsd:string ;
-                   mco:TrackReleaseDate "1986-10-31T00:00:00"^^xsd:dateTime ;
-                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                   rdfs:label "Livin On A Prayer"^^xsd:string .
+:LivinOnAPrayer rdf:type owl:NamedIndividual ,
+                         :SingleTrack ;
+                :partOfAlbum :SlipperyWhenWet ;
+                :sungBy :BonJovi ;
+                :TrackDurationInMinutes "04:11"^^xsd:duration ;
+                :TrackName "Livin' On A Prayer"^^xsd:string ;
+                :TrackReleaseDate "1986-10-31T00:00:00"^^xsd:dateTime ;
+                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                rdfs:label "Livin On A Prayer"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Metal
-mco:Metal rdf:type owl:NamedIndividual ,
-                   mco:Genre ;
-          mco:GenreName "Metal"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-          <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:27:05Z"^^xsd:dateTime ;
-          rdfs:label "Metal"^^xsd:string .
+:Metal rdf:type owl:NamedIndividual ,
+                :Genre ;
+       :GenreName "Metal"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:27:05Z"^^xsd:dateTime ;
+       rdfs:label "Metal"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Metallica
-mco:Metallica rdf:type owl:NamedIndividual ,
-                       mco:Band ;
-              mco:ArtistGenreType mco:Metal ;
-              mco:ArtistName "Metallica"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              dcterms:creator "Ajudev"^^xsd:string ;
-              rdfs:label "Metallica"^^xsd:string .
+:Metallica rdf:type owl:NamedIndividual ,
+                    :Band ;
+           :ArtistGenreType :Metal ;
+           :ArtistName "Metallica"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/terms/creator> "Ajudev"^^xsd:string ;
+           rdfs:label "Metallica"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#MilesDavis
+:MilesDavis rdf:type owl:NamedIndividual ,
+                     :SingleArtist ;
+            :ArtistGenreType :Jazz ;
+            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:15:47Z"^^xsd:dateTime ;
+            rdfs:label "Miles Davis"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#One
-mco:One rdf:type owl:NamedIndividual ,
-                 mco:SingleTrack ;
-        mco:partOfAlbum mco:AndJusticeForAll ;
-        mco:sungBy mco:Metallica ;
-        mco:TrackDurationInMinutes "07:27"^^xsd:duration ;
-        mco:TrackName "One"^^xsd:string ;
-        mco:TrackReleaseDate "1989-01-10T00:00:00"^^xsd:dateTime ;
-        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-        <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:52:58Z"^^xsd:dateTime ;
-        rdfs:label "One"^^xsd:string .
+:One rdf:type owl:NamedIndividual ,
+              :SingleTrack ;
+     :partOfAlbum :AndJusticeForAll ;
+     :sungBy :Metallica ;
+     :TrackDurationInMinutes "07:27"^^xsd:duration ;
+     :TrackName "One"^^xsd:string ;
+     :TrackReleaseDate "1989-01-10T00:00:00"^^xsd:dateTime ;
+     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:52:58Z"^^xsd:dateTime ;
+     rdfs:label "One"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Rock
-mco:Rock rdf:type owl:NamedIndividual ,
-                  mco:Genre ;
-         mco:GenreName "Rock"^^xsd:string ;
-         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-         <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:05:54Z"^^xsd:dateTime ;
-         rdfs:label "Rock"^^xsd:string .
+:Rock rdf:type owl:NamedIndividual ,
+               :Genre ;
+      :GenreName "Rock"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-03T04:05:54Z"^^xsd:dateTime ;
+      rdfs:label "Rock"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Sam
-mco:Sam rdf:type owl:NamedIndividual ,
-                 mco:DJ ;
-        mco:workingFor mco:WattRadio ;
-        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-        <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:22:19Z"^^xsd:dateTime .
+:Sam rdf:type owl:NamedIndividual ,
+              :DJ ;
+     :workingFor :WattRadio ;
+     <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:22:19Z"^^xsd:dateTime .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#SlipperyWhenWet
-mco:SlipperyWhenWet rdf:type owl:NamedIndividual ,
-                             mco:Album ;
-                    mco:AlbumByArtist mco:BonJovi ;
-                    mco:partOfGenre mco:Rock ;
-                    mco:AlbumName "Slippery When Wet"^^xsd:string ;
-                    mco:AlbumReleaseDate "1986-08-18T00:00:00"^^xsd:dateTime ;
-                    <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                    <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:47:34Z"^^xsd:dateTime ;
-                    rdfs:label "Slippery When Wet"^^xsd:string .
+:SlipperyWhenWet rdf:type owl:NamedIndividual ,
+                          :Album ;
+                 :AlbumByArtist :BonJovi ;
+                 :partOfGenre :Rock ;
+                 :AlbumName "Slippery When Wet"^^xsd:string ;
+                 :AlbumReleaseDate "1986-08-18T00:00:00"^^xsd:dateTime ;
+                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/date> "2021-02-03T03:47:34Z"^^xsd:dateTime ;
+                 rdfs:label "Slippery When Wet"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#SoWhat
+:SoWhat rdf:type owl:NamedIndividual ,
+                 :SingleTrack ;
+        :partOfAlbum :KindOfBlue ;
+        :sungBy :MilesDavis ;
+        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:14:51Z"^^xsd:dateTime ;
+        rdfs:label "So What"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#TheMorningShow
-mco:TheMorningShow rdf:type owl:NamedIndividual ,
-                            mco:RadioShow ;
-                   mco:playedBy mco:WattRadio ;
-                   mco:ShowDurationInHours "3"^^xsd:duration ;
-                   mco:ShowEndTime "11:30:00"^^xsd:time ;
-                   mco:ShowStartTime "06:30:00"^^xsd:time ;
-                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                   <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:09:22Z"^^xsd:dateTime ;
-                   rdfs:label "The Morning Show"^^xsd:string .
+:TheMorningShow rdf:type owl:NamedIndividual ,
+                         :RadioShow ;
+                :playedBy :WattRadio ;
+                :ShowDurationInHours "3"^^xsd:duration ;
+                :ShowEndTime "11:30:00"^^xsd:time ;
+                :ShowStartTime "06:30:00"^^xsd:time ;
+                <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/date> "2021-02-09T20:09:22Z"^^xsd:dateTime ;
+                rdfs:label "The Morning Show"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#TheNotoriousBIG
-mco:TheNotoriousBIG rdf:type owl:NamedIndividual ,
-                             mco:SingleArtist ;
-                    mco:ArtistGenreType mco:HipHop ;
-                    mco:ArtistName "The Notorious B.I.G"^^xsd:string ;
-                    <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-                    <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:33:56Z"^^xsd:dateTime ;
-                    rdfs:label "The Notorious B.I.G"^^xsd:string .
+:TheNotoriousBIG rdf:type owl:NamedIndividual ,
+                          :SingleArtist ;
+                 :ArtistGenreType :HipHop ;
+                 :ArtistName "The Notorious B.I.G"^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:33:56Z"^^xsd:dateTime ;
+                 rdfs:label "The Notorious B.I.G"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#WattRadio
-mco:WattRadio rdf:type owl:NamedIndividual ,
-                       mco:RadioStation ;
-              <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
-              <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:28:42Z"^^xsd:dateTime ;
-              rdfs:label "Watt Radio"^^xsd:string .
+:WattRadio rdf:type owl:NamedIndividual ,
+                    :RadioStation ;
+           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:28:42Z"^^xsd:dateTime ;
+           rdfs:label "Watt Radio"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Live&More
+<https://ajudev.github.io/ontology/music.owl#Live&More> rdf:type owl:NamedIndividual ,
+                                                                 :Album ;
+                                                        :AlbumByArtist :DonnaSummer ;
+                                                        :partOfGenre :Disco ;
+                                                        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                                                        <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:09:14Z"^^xsd:dateTime ;
+                                                        rdfs:label "Live and More"^^xsd:string .
 
 
 #################################################################
@@ -555,9 +669,9 @@ mco:WattRadio rdf:type owl:NamedIndividual ,
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( mco:DJ
-                mco:Producer
-                mco:Technician
+  owl:members ( :DJ
+                :Producer
+                :Technician
               )
 ] .
 
