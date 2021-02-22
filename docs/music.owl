@@ -213,7 +213,6 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  https://ajudev.github.io/ontology/music.owl#Sings
 :Sings rdf:type owl:ObjectProperty ;
-       rdfs:subPropertyOf owl:topObjectProperty ;
        owl:inverseOf :SungBy ;
        rdfs:domain :Artist ;
        rdfs:range :Track ;
@@ -233,7 +232,6 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  https://ajudev.github.io/ontology/music.owl#SungBy
 :SungBy rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf owl:topObjectProperty ;
         rdfs:domain :Track ;
         rdfs:range :Artist ;
         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
@@ -576,6 +574,45 @@ xsd:time rdf:type rdfs:Datatype .
           rdfs:label "Aquarium"^^xsd:string .
 
 
+###  https://ajudev.github.io/ontology/music.owl#BeatIt
+:BeatIt rdf:type owl:NamedIndividual ,
+                 :SingleTrack ;
+        :HasBeenPlayed :Feb10 ,
+                       :Feb9 ;
+        :PartOfAlbum :Thriller ;
+        :PlayedOn :TheMorningShow ;
+        :SungBy :MichealJackson ;
+        :TrackPlayedBy :Bob ,
+                       :Sam ;
+        :TrackDurationInMinutes "4:19"^^xsd:duration ;
+        :TrackName "Beat It"^^xsd:string ;
+        :TrackReleaseDate "1982-12-01T00:00:00"^^xsd:dateTime ;
+        <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-21T21:39:37Z"^^xsd:dateTime ;
+        rdfs:label "Beat It"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#BlakeShelton
+:BlakeShelton rdf:type owl:NamedIndividual ,
+                       :SingleArtist ;
+              :ArtistGenreType :Country ;
+              :ArtistName "Blake Shelton"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:20:42Z"^^xsd:dateTime ;
+              rdfs:label "Blake Sheldon"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Bob
+:Bob rdf:type owl:NamedIndividual ,
+              :DJ ;
+     :PartOfShow :TheMorningShow ;
+     :WorkingFor :WattRadio ;
+     :EmployeeName "Bob"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/date> "2021-02-21T21:55:50Z"^^xsd:dateTime ;
+     rdfs:label "Bob"^^xsd:string .
+
+
 ###  https://ajudev.github.io/ontology/music.owl#BonJovi
 :BonJovi rdf:type owl:NamedIndividual ,
                   :Band ;
@@ -590,7 +627,7 @@ xsd:time rdf:type rdfs:Datatype .
                             :SingleArtist ;
                    :ArtistGenreType :Classical ;
                    :ArtistName "Charles-Camille Saint-Saëns"^^xsd:string ;
-                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                   <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
                    <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:00:14Z"^^xsd:dateTime ;
                    rdfs:label "Camille Saint-Saëns"^^xsd:string .
 
@@ -602,7 +639,7 @@ xsd:time rdf:type rdfs:Datatype .
                    :PartOfGenre :Classical ;
                    :AlbumName "The Carnival of Animals"^^xsd:string ;
                    :AlbumReleaseDate "1922-02-25T00:00:00"^^xsd:dateTime ;
-                   <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                   <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
                    <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:58:26Z"^^xsd:dateTime ;
                    rdfs:label "The Carnival of Animals"^^xsd:string .
 
@@ -611,16 +648,25 @@ xsd:time rdf:type rdfs:Datatype .
 :Classical rdf:type owl:NamedIndividual ,
                     :Genre ;
            :GenreName "Classical"^^xsd:string ;
-           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
            <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:50:11Z"^^xsd:dateTime ;
            rdfs:label "Classical"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Country
+:Country rdf:type owl:NamedIndividual ,
+                  :Genre ;
+         :GenreName "Country"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:05:30Z"^^xsd:dateTime ;
+         rdfs:label "Country"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Disco
 :Disco rdf:type owl:NamedIndividual ,
                 :Genre ;
        :GenreName "Disco"^^xsd:string ;
-       <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
        <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:50:58Z"^^xsd:dateTime ;
        rdfs:label "Disco"^^xsd:string .
 
@@ -630,7 +676,7 @@ xsd:time rdf:type rdfs:Datatype .
                       :SingleArtist ;
              :ArtistGenreType :Disco ;
              :ArtistName "LaDonna Adrian Gaines"^^xsd:string ;
-             <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
              <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:08:13Z"^^xsd:dateTime ;
              rdfs:label "Donna Summer"^^xsd:string .
 
@@ -645,6 +691,16 @@ xsd:time rdf:type rdfs:Datatype .
        rdfs:label "Feb 10 2021"^^xsd:string .
 
 
+###  https://ajudev.github.io/ontology/music.owl#Feb9
+:Feb9 rdf:type owl:NamedIndividual ,
+               :TrackPlayedDate ;
+      :WasPlayedBy :Bob ;
+      :ShowPlayedDate "2021-02-09T00:00:00"^^xsd:dateTime ;
+      <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-21T21:57:45Z"^^xsd:dateTime ;
+      rdfs:label "Feb 9"^^xsd:string .
+
+
 ###  https://ajudev.github.io/ontology/music.owl#HipHop
 :HipHop rdf:type owl:NamedIndividual ,
                  :Genre ;
@@ -652,6 +708,15 @@ xsd:time rdf:type rdfs:Datatype .
         <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
         <http://purl.org/dc/elements/1.1/date> "2021-02-04T03:31:10Z"^^xsd:dateTime ;
         rdfs:label "Hip Hop"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#House
+:House rdf:type owl:NamedIndividual ,
+                :Genre ;
+       :GenreName "House"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:05:43Z"^^xsd:dateTime ;
+       rdfs:label "House"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Hypnotize
@@ -674,7 +739,7 @@ xsd:time rdf:type rdfs:Datatype .
 :Jazz rdf:type owl:NamedIndividual ,
                :Genre ;
       :GenreName "Jazz"^^xsd:string ;
-      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
       <http://purl.org/dc/elements/1.1/date> "2021-02-13T05:51:06Z"^^xsd:dateTime ;
       rdfs:label "Jazz"^^xsd:string .
 
@@ -697,7 +762,7 @@ xsd:time rdf:type rdfs:Datatype .
             :PartOfGenre :Jazz ;
             :AlbumName "Kind Of Blue"^^xsd:string ;
             :AlbumReleaseDate "1959-08-17T00:00:00"^^xsd:dateTime ;
-            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
             <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:15:16Z"^^xsd:dateTime ;
             rdfs:label "Kind Of Blue"^^xsd:string .
 
@@ -713,7 +778,7 @@ xsd:time rdf:type rdfs:Datatype .
            :TrackDurationInMinutes "03:17"^^xsd:duration ;
            :TrackName "Last Dance"^^xsd:string ;
            :TrackReleaseDate "1978-07-02T00:00:00"^^xsd:dateTime ;
-           <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
            <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:09:28Z"^^xsd:dateTime ;
            rdfs:label "Last Dance"^^xsd:string .
 
@@ -764,14 +829,36 @@ xsd:time rdf:type rdfs:Datatype .
            rdfs:label "Metallica"^^xsd:string .
 
 
+###  https://ajudev.github.io/ontology/music.owl#MichealJackson
+:MichealJackson rdf:type owl:NamedIndividual ,
+                         :SingleArtist ;
+                :ArtistGenreType :Pop ;
+                :ArtistName "Micheal Jackson"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/date> "2021-02-21T21:40:23Z"^^xsd:dateTime ;
+                rdfs:label "Micheal Jackson"^^xsd:string .
+
+
 ###  https://ajudev.github.io/ontology/music.owl#MilesDavis
 :MilesDavis rdf:type owl:NamedIndividual ,
                      :SingleArtist ;
             :ArtistGenreType :Jazz ;
             :ArtistName "Miles Davis"^^xsd:string ;
-            <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
             <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:15:47Z"^^xsd:dateTime ;
             rdfs:label "Miles Davis"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#MyNameIsSkrillex
+:MyNameIsSkrillex rdf:type owl:NamedIndividual ,
+                           :Album ;
+                  :AlbumByArtist :Skrillex ;
+                  :PartOfGenre :House ;
+                  :AlbumName "My Name Is Skrillex"^^xsd:string ;
+                  :AlbumReleaseDate "2010-06-07T00:00:00"^^xsd:dateTime ;
+                  <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:09:18Z"^^xsd:dateTime ;
+                  rdfs:label "My Name is Skrillex"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#One
@@ -788,6 +875,15 @@ xsd:time rdf:type rdfs:Datatype .
      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
      <http://purl.org/dc/elements/1.1/date> "2021-02-04T02:52:58Z"^^xsd:dateTime ;
      rdfs:label "One"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Pop
+:Pop rdf:type owl:NamedIndividual ,
+              :Genre ;
+     :GenreName "Pop" ;
+     <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/date> "2021-02-21T21:41:21Z"^^xsd:dateTime ;
+     rdfs:label "Pop" .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#Rock
@@ -808,6 +904,16 @@ xsd:time rdf:type rdfs:Datatype .
      <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
      <http://purl.org/dc/elements/1.1/date> "2021-02-09T19:22:19Z"^^xsd:dateTime ;
      rdfs:label "Sam"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Skrillex
+:Skrillex rdf:type owl:NamedIndividual ,
+                   :SingleArtist ;
+          :ArtistGenreType :House ;
+          :ArtistName "Skrillex"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:10:23Z"^^xsd:dateTime ;
+          rdfs:label "Skrillex"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#SlipperyWhenWet
@@ -833,9 +939,37 @@ xsd:time rdf:type rdfs:Datatype .
         :TrackDurationInMinutes "9:22"^^xsd:duration ;
         :TrackName "So What"^^xsd:string ;
         :TrackReleaseDate "1959-08-17T00:00:00"^^xsd:dateTime ;
-        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
         <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:14:51Z"^^xsd:dateTime ;
         rdfs:label "So What"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#TheBaby
+:TheBaby rdf:type owl:NamedIndividual ,
+                  :SingleTrack ;
+         :HasBeenPlayed :Feb9 ;
+         :PartOfAlbum :TheDreamer ;
+         :PlayedOn :TheMorningShow ;
+         :SungBy :BlakeShelton ;
+         :TrackPlayedBy :Bob ;
+         :TrackDurationInMinutes "3:55"^^xsd:duration ;
+         :TrackName "The Baby"^^xsd:string ;
+         :TrackReleaseDate "2003-02-04T00:00:00"^^xsd:dateTime ;
+         <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:26:55Z"^^xsd:dateTime ;
+         rdfs:label "The Baby"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#TheDreamer
+:TheDreamer rdf:type owl:NamedIndividual ,
+                     :Album ;
+            :AlbumByArtist :BlakeShelton ;
+            :PartOfGenre :Country ;
+            :AlbumName "The Dreamer"^^xsd:string ;
+            :AlbumReleaseDate "2003-02-04T00:00:00"^^xsd:dateTime ;
+            <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:23:34Z"^^xsd:dateTime ;
+            rdfs:label "The Dreamer"^^xsd:string .
 
 
 ###  https://ajudev.github.io/ontology/music.owl#TheMorningShow
@@ -861,6 +995,18 @@ xsd:time rdf:type rdfs:Datatype .
                  rdfs:label "The Notorious B.I.G"^^xsd:string .
 
 
+###  https://ajudev.github.io/ontology/music.owl#Thriller
+:Thriller rdf:type owl:NamedIndividual ,
+                   :Album ;
+          :AlbumByArtist :MichealJackson ;
+          :PartOfGenre :Pop ;
+          :AlbumName "Thriller"^^xsd:string ;
+          :AlbumReleaseDate "1982-12-01T00:00:00"^^xsd:dateTime ;
+          <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-21T21:45:04Z"^^xsd:dateTime ;
+          rdfs:label "Thriller"^^xsd:string .
+
+
 ###  https://ajudev.github.io/ontology/music.owl#WattRadio
 :WattRadio rdf:type owl:NamedIndividual ,
                     :RadioStation ;
@@ -877,9 +1023,25 @@ xsd:time rdf:type rdfs:Datatype .
                                                         :PartOfGenre :Disco ;
                                                         :AlbumName "Live and More"^^xsd:string ;
                                                         :AlbumReleaseDate "1978-08-28T00:00:00"^^xsd:dateTime ;
-                                                        <http://purl.org/dc/elements/1.1/creator> "ajudev"^^xsd:string ;
+                                                        <http://purl.org/dc/elements/1.1/creator> "arjun"^^xsd:string ;
                                                         <http://purl.org/dc/elements/1.1/date> "2021-02-13T06:09:14Z"^^xsd:dateTime ;
                                                         rdfs:label "Live and More"^^xsd:string .
+
+
+###  https://ajudev.github.io/ontology/music.owl#Weekends!!!
+<https://ajudev.github.io/ontology/music.owl#Weekends!!!> rdf:type owl:NamedIndividual ,
+                                                                   :SingleTrack ;
+                                                          :HasBeenPlayed :Feb9 ;
+                                                          :PartOfAlbum :MyNameIsSkrillex ;
+                                                          :PlayedOn :TheMorningShow ;
+                                                          :SungBy :Skrillex ;
+                                                          :TrackPlayedBy :Bob ;
+                                                          :TrackDurationInMinutes "4:45"^^xsd:duration ;
+                                                          :TrackName "Weekend!!!"^^xsd:string ;
+                                                          :TrackReleaseDate "2010-06-07T00:00:00"^^xsd:dateTime ;
+                                                          <http://purl.org/dc/elements/1.1/creator> "steph"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/date> "2021-02-21T22:14:34Z"^^xsd:dateTime ;
+                                                          rdfs:label "Weekends!!"^^xsd:string .
 
 
 #################################################################
